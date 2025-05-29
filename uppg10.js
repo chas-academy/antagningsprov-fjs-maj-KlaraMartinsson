@@ -7,11 +7,37 @@ function uppg10(){
     // smallOdd ska innehålla tal mindre än 10 och udda
     // other ska innehålla alla andra tal
     // returnera ett objekt med de tre arrayerna
+    function sortNumbers(numbersArray) {  
+      const bigEven = [];
+      const smallOdd = [];
+      const other = [];
 
-  
-    
-  
+      for (let i = 0; i < numbersArray.length; i++) {
+        
+          const number = numbersArray[i];
+
+          if (number > 10 && number % 2 === 0) {
+              bigEven.push(number);
+          } 
+          
+          else if (number < 10 && number % 2 !== 0) {
+              smallOdd.push(number);
+          } 
+          
+          else {
+              other.push(number);
+          }
+      } 
+
+      return {
+          bigEven: bigEven,
+          smallOdd: smallOdd,
+          other: other
+      };
   }
+  const result = sortNumbers(numbers);
+  console.log(result);
+}
   
   module.exports = { uppg10 };
   
